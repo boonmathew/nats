@@ -1,11 +1,29 @@
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: nats-js-disk
+  labels:
+    name: nats-js-disk
 spec:
-  volumeName: nats-js-disk
+  capacity:
+    storage: 2Gi
+  storageClassName: standard
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
+  gcePersistentDisk:
+    pdName: nats-js-disk
+    fsType: ext4
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nats-js-disk-claim
+spec:
+  accessModes:
+    - ReadWriteMany
   resources:
     requests:
-      storage: 3Gi
+      storage: 2Gi
+  selector:
+    matchLabels:
+      name: nats-js-disk
