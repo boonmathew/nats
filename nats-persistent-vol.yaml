@@ -1,7 +1,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
-name: nats-js-disk
+metadata:
+  name: nats-js-disk
 spec:
+  volumeName: nats-js-disk
   accessModes:
     - ReadWriteOnce
   resources:
