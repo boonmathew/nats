@@ -9,7 +9,7 @@ spec:
     storage: 2Gi
   storageClassName: standard
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   gcePersistentDisk:
     pdName: nats-js-disk
     fsType: ext4
@@ -20,7 +20,7 @@ metadata:
   name: nats-js-disk-claim
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 2Gi
