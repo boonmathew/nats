@@ -17,12 +17,12 @@ spec:
           - name: VSTS_ACCOUNT
             valueFrom:
               secretKeyRef:
-                name: vsts
+                name: registry
                 key: VSTS_ACCOUNT
           - name: VSTS_TOKEN
             valueFrom:
               secretKeyRef:
-                name: vsts
+                name: registry
                 key: VSTS_TOKEN
           - name: VSTS_POOL
             value: nimbus-test
