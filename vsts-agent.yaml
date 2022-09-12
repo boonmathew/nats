@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: vsts-agent
-        image: mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-tfs-2018
+        image: mcr.microsoft.com/azure-pipelines/vsts-agent:ubuntu-16.04-docker-17.12.0-ce
         env:
           - name: VSTS_ACCOUNT
             valueFrom:
